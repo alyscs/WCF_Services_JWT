@@ -16,7 +16,7 @@
                         .GetString(Convert.FromBase64String(authHeader.Substring(6)))
                         .Split(':');
                 var user = new { Name = svcCredentials[0], Password = svcCredentials[1] };
-                if ((user.Name == "smart" && user.Password == "andr0id"))
+                if ((user.Name == "anthony" && user.Password == "1"))
                 {
                     //User is authrized and originating call will proceed  
                     return true;
