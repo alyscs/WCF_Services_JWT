@@ -1,5 +1,5 @@
-# WcfTokenService
-Este proyecto es para manejar y generar los Token para el nivel de seguridad, aunque aún sigue siendo Basic Authentication para las autorizaciones
+# WCF_Services_JWT
+Este proyecto es para genear los Token para el nivel de seguridad, aunque aún sigue siendo Basic Authentication para las autorizaciones.
 
 1. Probar en Postman
 > Creo que es uno de las mejores herramientas para probar tus WebServices REST.  
@@ -9,13 +9,5 @@ Images:
 1° Imagen              	 | 
 :-----------------------:|
 ![alt text][logo1] 		   |
-2° Imagen         			 |
-![alt text][logo2] 	     |
-3° Imagen   	 		       | 
-![alt text][logo3]	     |
 
-
-
-[logo1]: https://github.com/puitiza/WcfTokenService/blob/Parte4_BasicAuthentication/Capture/1.PNG?raw=true
-[logo2]: https://github.com/puitiza/WcfTokenService/blob/Parte4_BasicAuthentication/Capture/2.PNG?raw=true
-[logo3]: https://github.com/puitiza/WcfTokenService/blob/Parte4_BasicAuthentication/Capture/3.PNG?raw=true
+[logo1]: https://github.com/puitiza/WCF_Services_JWT/blob/master/Capture/1.PNG?raw=true
