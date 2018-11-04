@@ -11,6 +11,7 @@ namespace wcfService1.Database
 
         public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
+        public DbSet<CustOrderHist> CustOrderHist { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

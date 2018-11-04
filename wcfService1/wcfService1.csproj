@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Customers.cs" />
+    <Compile Include="Database\CustOrderHist.cs" />
     <Compile Include="Database\Employees.cs" />
     <Compile Include="Database\NorthwndDBContext.cs" />
     <Compile Include="DistributorValidator.cs" />

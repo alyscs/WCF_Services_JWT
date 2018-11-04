@@ -3,6 +3,7 @@
     using Jose;
     using System;
     using System.Collections.Generic;
+    using System.Data.SqlClient;
     using System.Linq;
     using System.ServiceModel;
     using System.ServiceModel.Activation;
@@ -24,6 +25,13 @@
                 // Esta es una forma mas practica de usar correctamente el Linq con expresiones landa
                 var employee = dc.Employees.SingleOrDefault(e => e.EmployeeID.ToString().Equals(data.pwd));
 
+                //Llamando un procedure
+                List<SqlParameter> paramlist = new List<SqlParameter>();
+                string customerID = "ALFKI";
+                paramlist.Add(new SqlParameter("CustomerID", customerID));
+                var custOrderHists_ = dc.Database.SqlQuery<CustOrderHist>("CustOrderHist @CustomerID",paramlist.ToArray());
+                List<CustOrderHist> cust = custOrderHists_.ToList<CustOrderHist>(); //Ahora me devuelve una lista del procedure para poder manejarlo
+
                 //Esta forma es la antigua
                 //var employee = (from Employees in dc.Employees where Employees.EmployeeID.ToString() == data.pwd select Employees).First();
                 var response = new ResponseData
@@ -31,7 +39,7 @@
                     token = secureToken,
                     authenticated = true,
                     employeeId = employee.EmployeeID.ToString(),
-                    firstname = employee.LastName,
+                    firstname = cust.SingleOrDefault(a => a.Total.ToString().Equals("6")).ProductName,
                     timestamp = DateTime.Now,
                     userName = data.usname
                 };
